@@ -1045,7 +1045,13 @@
   }
 
   // ---------- ADD IMAGE ----------
-  function addImage(){
+ function addImage(){
+  var src = prompt("Зургийн нэрийг оруул (жишээ: _DSC8173.jpg):");
+  if(!src) return;
+  var id = "c"+Date.now();
+  insertCustomImage(id, src);
+  setupDraggables();
+}
     var inp = document.createElement("input");
     inp.type="file"; inp.accept="image/*";
     inp.onchange=function(){
